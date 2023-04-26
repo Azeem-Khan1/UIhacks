@@ -1,0 +1,126 @@
+/*
+Error: Invalid CSS after "": expected selector, was "<!DOCTYPE html>"
+        on line 1 of index.html
+
+1: <!DOCTYPE html>
+2: <html lang="en">
+3: <head>
+4:     <meta charset="UTF-8">
+5:     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+6:     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Backtrace:
+index.html:1
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1218:in `expr!'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/scss/static_parser.rb:20:in `parse_selector'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:434:in `visit_rule'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+/var/lib/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px); }
+  to {
+    opacity: 1; } }
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+html, body {
+  height: 100%; }
+
+body {
+  background-color: #101256;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px; }
+
+.weather-container {
+  background-color: #b1ffe6;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out; }
+  .weather-container:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); }
+  .weather-container h1 {
+    color: #4285f4;
+    font-size: 28px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fade-in 0.5s ease-in-out 0.3s forwards; }
+  .weather-container .weather-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: -5px;
+    justify-content: center;
+    margin-left: -8px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in 0.5s ease-in-out 0.3s forwards; }
+    .weather-container .weather-info .weather-icon {
+      margin-right: 15px;
+      margin-top: -15px;
+      opacity: 0;
+      transform: scale(0);
+      animation: pop-in 0.5s ease-in-out 0.5s forwards; }
+      .weather-container .weather-info .weather-icon img {
+        max-width: 100px; }
+    .weather-container .weather-info .weather-details {
+      text-align: left; }
+      .weather-container .weather-info .weather-details h2 {
+        color: #4285f4;
+        font-size: 24px;
+        margin: 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        padding: 5px;
+        animation: fade-in 0.5s ease-in-out 0.7s forwards; }
+      .weather-container .weather-info .weather-details p {
+        font-size: 18px;
+        margin: 0;
+        color: #424242;
+        opacity: 0;
+        transform: translateY(-20px);
+        padding: 5px;
+        animation: fade-in 0.5s ease-in-out 0.9s forwards; }
+
+/*# sourceMappingURL=styles.css.map */
